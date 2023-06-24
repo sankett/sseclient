@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import { DataGrid } from '@mui/x-data-grid';
 import { useState } from 'react';
-import useScanDetection from 'use-scan-detection'
 import { Button, Input } from '@mui/material';
 import { ReactToPrint } from 'react-to-print';
 import React, { useRef, useEffect, useCallback } from "react";
