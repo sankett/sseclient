@@ -69,7 +69,8 @@ function Approach2() {
         <div>
           
              <span style={{textAlign: "center"}}><h3>Approach 2 </h3></span> 
-             <span style={{textAlign: "center", paddingLeft: "5%"}}><img src="./ap2.jpg" alt="logo" style={{width: "90%", height: "300px"}} /></span>
+             <span style={{textAlign: "center", paddingLeft: "20%"}}>
+              <img src="./ap2.jpg" alt="logo" style={{width: "60%", height: "300px"}} /></span>
           { selectedProducts.length > 0 && <table style={{width: "98%", marginLeft: "1%", border: "1px solid black"}}>
                 <thead>
                     <tr>

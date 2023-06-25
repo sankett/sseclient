@@ -10,10 +10,8 @@ root.render(
   // <React.StrictMode>
   <div>
 
-<div style={{float: "left", width:"49%", border:"1px whitesmoke black", padding: "5px"}}>
 
-    <Approach1 /></div>
-    <div style={{float: "left", width:"49%", border:"1px whitesmoke black", padding: "5px"}}>
+    <div style={{float: "left", width:"99%", border:"1px whitesmoke black", padding: "5px"}}>
 
     <Approach2 /></div>
     </div>
