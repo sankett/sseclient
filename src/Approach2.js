@@ -9,8 +9,23 @@ function Approach2() {
     const [total, setTotal] = useState(0);
 
     useEffect(() => {
-        const eventSource = new EventSource(`https://sseserver.onrender.com/sse/${data}`);
-    
+        //const eventSource = new EventSource(`https://sseserver.onrender.com/sse/${data}`);
+        const eventSource = new EventSource('https://sseserver.onrender.com/connect');
+        setTimeout(() => {
+          const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ scandata: "1111" })
+        };
+          fetch("https://sseserver.onrender.com/broadcastdata", requestOptions )
+            .then((res) => res.json())
+            .then((data) => {
+              console.log("data", data);
+              
+            });
+        }, 2000);
+            
+        
         eventSource.onmessage = (event) => {
           try {
             const product = JSON.parse(event.data);
@@ -34,6 +49,7 @@ function Approach2() {
             console.error("Failed to parse JSON data", error);
           }
         };
+        
     
         return () => {
           eventSource.close();
