@@ -56,6 +56,7 @@ function Approach1() {
 
     return (
         <div>
+            <img src="./logo192.png" alt="logo" style={{width: "50%", height: "200px"}} />
             <span style={{textAlign: "center"}}><h4>Approach 1 <span style={{color: "blue"}}>( Service > (SignalR) UI >(Async) API)</span></h4></span>
             { selectedProducts.length > 0 && <table style={{width: "98%", marginLeft: "1%", border: "1px solid black"}}>
                 <thead>
