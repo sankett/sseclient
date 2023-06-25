@@ -67,7 +67,9 @@ function Approach2() {
 
       return (
         <div>
-             <span style={{textAlign: "center"}}><h4>Approach 2 <span style={{color: "blue"}}>( Service > (Http) API >(SSE) UI)</span></h4></span> 
+          
+             <span style={{textAlign: "center"}}><h3>Approach 2 </h3></span> 
+             <span style={{textAlign: "center", paddingLeft: "5%"}}><img src="./ap2.jpg" alt="logo" style={{width: "90%", height: "300px"}} /></span>
           { selectedProducts.length > 0 && <table style={{width: "98%", marginLeft: "1%", border: "1px solid black"}}>
                 <thead>
                     <tr>
@@ -84,19 +86,19 @@ function Approach2() {
                     
                     selectedProducts.map((product) => (
                         <tr key={product.id} style={{paddingTop:"20px"}}>
-                             <td style={{width: "10%", textAlign: "center"}}>
-                                <img src={product.Image} alt={product.name} style={{width: "140px", height: "100px"}} />
+                            <td style={{width: "10%", textAlign: "center"}}>
+                                <img src={product.Image} alt={product.name} style={{width: "100px", height: "100px"}} />
                              </td>
                            
-                             <td style={{width: "65%", textAlign: "left"}}>
-                            <span style={{fontWeight:"bold"}}>{product.name}</span><br></br>
+                            <td style={{width: "65%", textAlign: "left"}}>
+                            <span style={{fontWeight:"bold", fontSize: "14px"}}>{product.name}</span><br></br>
                             
-                            {product.description}<br></br>
+                            <span style={{fontSize: "12px"}}>{product.description}</span><br></br>
                             
                             </td>
-                            <td style={{width: "10%", textAlign: "center"}}>{product.price}</td>
-                            <td style={{width: "10%", textAlign: "center"}}>{product.quantity}</td>
-                            <td style={{width: "10%", textAlign: "center"}}>{product.price * product.quantity}</td>
+                            <td style={{width: "10%", textAlign: "center", fontSize: "14px"}}>{product.price}</td>
+                            <td style={{width: "10%", textAlign: "center", fontSize: "14px"}}>{product.quantity}</td>
+                            <td style={{width: "10%", textAlign: "center", fontSize: "14px"}}>{product.price * product.quantity}</td>
                         </tr>
                         
                     ))                    
