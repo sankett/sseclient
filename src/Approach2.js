@@ -13,14 +13,14 @@ function Approach2() {
       const baserenderUrl = "https://sseserver.onrender.com";
       const baselocalUrl = "http://localhost:3001";
         //const eventSource = new EventSource(`https://sseserver.onrender.com/sse/${data}`);
-        const eventSource = new EventSource(`https://sseserver.onrender.com/connect`);
+        const eventSource = new EventSource(`https://ssenode.azurewebsites.net/connect`);
         setTimeout(() => {
           const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ scandata: "1111" })
         };
-          fetch(`https://sseserver.onrender.com/broadcastdata`, requestOptions )
+          fetch(`https://ssenode.azurewebsites.net/broadcastdata`, requestOptions )
             .then((res) => res.json())
             .then((data) => {
               console.log("data", data);
