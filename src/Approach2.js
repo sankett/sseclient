@@ -9,18 +9,17 @@ function Approach2() {
     const [total, setTotal] = useState(0);
 
     useEffect(() => {
-      const baseazurerUrl = "https://ssenode.azurewebsites.net";
-      const baserenderUrl = "https://sseserver.onrender.com";
-      const baselocalUrl = "http://localhost:3001";
+      const baseURL1  = process.env.REACT_APP_SERVER_URL + "/connect";
+      const baseURL2  = process.env.REACT_APP_SERVER_URL + "/broadcastdata";
         //const eventSource = new EventSource(`https://sseserver.onrender.com/sse/${data}`);
-        const eventSource = new EventSource(`https://ssenode.azurewebsites.net/connect`);
+        const eventSource = new EventSource(`${baseURL1}`);
         setTimeout(() => {
           const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ scandata: "1111" })
         };
-          fetch(`https://ssenode.azurewebsites.net/broadcastdata`, requestOptions )
+          fetch(`${baseURL2}`, requestOptions )
             .then((res) => res.json())
             .then((data) => {
               console.log("data", data);
@@ -72,6 +71,7 @@ function Approach2() {
         <div>
           
              <span style={{textAlign: "center"}}><h3>Approach 2 </h3></span> 
+             
              <span style={{textAlign: "center", paddingLeft: "20%"}}>
               <img src="./ap2.jpg" alt="logo" style={{width: "60%", height: "300px"}} /></span>
           { selectedProducts.length > 0 && <table style={{width: "98%", marginLeft: "1%", border: "1px solid black"}}>
