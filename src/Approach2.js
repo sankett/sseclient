@@ -9,15 +9,17 @@ function Approach2() {
     const [total, setTotal] = useState(0);
 
     useEffect(() => {
+      const baseazurerUrl = "https://ssenode.azurewebsites.net";
+      const baserenderUrl = "https://sseserver.onrender.com";
         //const eventSource = new EventSource(`https://sseserver.onrender.com/sse/${data}`);
-        const eventSource = new EventSource('https://ssenode.azurewebsites.net/connect');
+        const eventSource = new EventSource(`${baserenderUrl}/connect`);
         setTimeout(() => {
           const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ scandata: "1111" })
         };
-          fetch("https://ssenode.azurewebsites.net/broadcastdata", requestOptions )
+          fetch(`${baserenderUrl}/broadcastdata`, requestOptions )
             .then((res) => res.json())
             .then((data) => {
               console.log("data", data);
